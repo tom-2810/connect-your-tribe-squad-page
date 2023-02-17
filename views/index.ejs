@@ -1,15 +1,9 @@
 <%- include('./partials/head.ejs') %>
+    <%- include('./partials/nav.ejs') %>
 
-<main>
-    <h1>
-        <%= squad.name %>
-    </h1>
+        <main>
+            <%- include('./partials/members.ejs') %>
 
-    <a href="/?squad=<%= squad.slug %>">
-        <%= squad.name %>
-    </a>
-<%- include('./partials/members.ejs') %>
-    
-</main>
+        </main>
 
-<%- include('./partials/foot.ejs') %>
+        <%- include('./partials/foot.ejs') %>

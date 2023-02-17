@@ -1,22 +1,45 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
 :root {
-    --medium-size: 1em;
+    --medium-size: 1rem;
+    --large-size: 3rem;
 
-    --default-content-width: 75vw;
-    --max-content-width: 90rem;
+    --default-content-width: 85vw;
+    --max-content-width: 110rem;
 }
 
-body {
-    display: flex;
-    justify-content: center;
-}
-
-main {
+main,
+header nav {
     width: var(--default-content-width);
     max-width: var(--max-content-width);
-    margin: auto 0;
+    margin: 0 auto;
+}
+
+ul {
+    list-style: none;
+}
+
+header .title {
+    font-size: var(--large-size);
+    font-weight: bold;
+}
+
+.members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.members .member {
+    width: 20rem;
+    height: 30rem;
+}
+
+.members .member > * {
+    width: 100%;
 }
