@@ -1,0 +1,15 @@
+<%- include('./partials/head.ejs') %>
+
+<main>
+    <h1>
+        <%= squad.name %>
+    </h1>
+
+    <a href="/?squad=<%= squad.slug %>">
+        <%= squad.name %>
+    </a>
+<%- include('./partials/members.ejs') %>
+    
+</main>
+
+<%- include('./partials/foot.ejs') %>

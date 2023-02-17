@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --medium-size: 1em;
+
+    --default-content-width: 75vw;
+    --max-content-width: 90rem;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: var(--default-content-width);
+    max-width: var(--max-content-width);
+    margin: auto 0;
+}
