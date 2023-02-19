@@ -2,14 +2,32 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: #fff;
 }
 
 :root {
     --medium-size: 1rem;
-    --large-size: 3rem;
+    --large-size: 2.5rem;
+    --larger-size: 4.5rem;
+
+    --small-border-radius: 6px;
+    --medium-border-radius: 18px;
 
     --default-content-width: 85vw;
     --max-content-width: 110rem;
+
+    --tranform-height: var(--large-size);
+    --profile-image-size: calc(100%*.6);
+
+    --c-background-gradient: linear-gradient(149.24deg, #262626 0%, #4B4B4B 100%);
+    --c-foreground: #1A1A1A;
+    --c-github-background-gradient: linear-gradient(180deg, #8F00FF 18.35%, #3D006E 100%);
+    --c-personal-website-background-gradient: linear-gradient(180deg, #04C300 28.77%, #037F00 100%);
+
+}
+
+body {
+    background: var(--c-background-gradient);
 }
 
 main,
@@ -29,17 +47,62 @@ header .title {
 }
 
 .members {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: var(--large-size);
+    row-gap: calc(var(--large-size) + var(--tranform-height));
+    margin-top: calc(var(--large-size) + var(--tranform-height));
+}
+
+.members :is(.member, .member .card) {
+    border-radius: var(--medium-border-radius);
 }
 
 .members .member {
-    width: 20rem;
-    height: 30rem;
+    position: relative;
+    aspect-ratio: 1/1.20;
+    background-color: rgb(255, 0, 0);
 }
 
-.members .member > * {
+.members .member .card {
+    min-height: 100%;
+    height: fit-content;
+    background-color: var(--c-foreground);
+    transition: .06s;
+}
+
+.members .member:hover .card {
+    transform: translateX(var(--medium-size)) translateY(var(--medium-size)) scale(1.028);
+    transition: .16s;
+}
+
+.members .member .profile-image {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    transform: translateY(calc(-1*var(--tranform-height)));
     width: 100%;
+}
+
+.members .member .profile-image img {
+    width: var(--profile-image-size);
+    border-radius: var(--small-border-radius);
+    aspect-ratio: 1/1;
+}
+
+.members .member .card .content {
+    padding-top: calc(var(--profile-image-size) + var(--medium-size) - var(--tranform-height));
+}
+
+.members .member:hover .profile-image {
+    animation: hover 1s infinite alternate;
+}
+
+@keyframes hover {
+    from {
+        transform: translateY(calc(-1*var(--tranform-height)));
+    }
+    to {
+        transform: translateY(calc(-1*(var(--tranform-height)*1.1)));
+    }
 }

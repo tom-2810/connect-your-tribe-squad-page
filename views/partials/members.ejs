@@ -1,17 +1,20 @@
 <article class="members">
     <!-- Hier komen de members -->
     <% squad.members.forEach(member=> { %>
-        <section class="member">
-            <% if (member.avatar) { %>
-                <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" />
-                <% }else{ %>
-                    <img src="/images/placeholder-avatar.jpg" alt="Placeholder avatar" />
-                    <% } %>
-                        <h2>
-                            <%= member.name %>
-                                <%= member.prefix %>
-                                    <%= member.surname %>
-                        </h2>
+        <section class="member" <% if (member.colour) { %> style="background-color: <%= member.colour.hex %>"<% } %> >
+                    <div class="card">
+                        <div class="profile-image">
+                            <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" />
+                        </div>
+                        <div class="content">
+                            <h2>
+                                <%= member.name %>
+                            </h2>
+
+                        </div>
+                    </div>
+
         </section>
         <% }) %>
+
 </article>
