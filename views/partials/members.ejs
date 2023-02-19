@@ -4,12 +4,39 @@
         <section class="member" <% if (member.colour) { %> style="background-color: <%= member.colour.hex %>"<% } %> >
                     <div class="card">
                         <div class="profile-image">
-                            <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" />
+                            <% if (member.avatar) { %>
+                                <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" />
+                                <% } else { %>
+                                    <img src="/images/placeholder-avatar.jpg" alt="placeholder avatar" />
+                                    <% } %>
                         </div>
                         <div class="content">
-                            <h2>
+                            <h2 class="name">
                                 <%= member.name %>
                             </h2>
+                            <ul class="member-links">
+
+                                <% if (member.gitHubHandle) { %>
+                                    <li class="github">
+
+                                        <% if (new RegExp("/(https?:\/\/)?(github.com)\/").test(member.gitHubHandle)) {
+                                            %>
+                                            <a href="<%= member.gitHubHandle %>">
+                                                <% }else{ %>
+                                                    <a href="https://github.com/<%= member.gitHubHandle %>">
+                                                        <% } %>
+                                                            <img src="/images/svg/github.svg" alt="">
+                                                    </a>
+                                    </li>
+                                    <% } %>
+
+                                        <% if (member.website) { %>
+                                            <li class="website"><a href="<%= member.website %>"><img
+                                                        src="/images/svg/website.svg" alt=""></a></li>
+                                            <% } %>
+                            </ul>
+
+                            <a class="to-profile" href="#">See profile -></a>
 
                         </div>
                     </div>

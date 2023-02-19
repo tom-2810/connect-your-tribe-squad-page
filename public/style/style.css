@@ -6,7 +6,9 @@
 }
 
 :root {
-    --medium-size: 1rem;
+    --xsmall-size: .7rem;
+    --small-size: 1.1rem;
+    --medium-size: 1.5rem;
     --large-size: 2.5rem;
     --larger-size: 4.5rem;
 
@@ -17,11 +19,11 @@
     --max-content-width: 110rem;
 
     --tranform-height: var(--large-size);
-    --profile-image-size: calc(100%*.6);
+    --profile-image-size: calc(100%*.5);
 
     --c-background-gradient: linear-gradient(149.24deg, #262626 0%, #4B4B4B 100%);
     --c-foreground: #1A1A1A;
-    --c-github-background-gradient: linear-gradient(180deg, #8F00FF 18.35%, #3D006E 100%);
+    --c-github-background-gradient: linear-gradient(180deg, #8F00FF 18.35%, #4e008d 100%);
     --c-personal-website-background-gradient: linear-gradient(180deg, #04C300 28.77%, #037F00 100%);
 
 }
@@ -41,6 +43,10 @@ ul {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 header .title {
     font-size: var(--large-size);
     font-weight: bold;
@@ -49,9 +55,9 @@ header .title {
 .members {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
-    gap: var(--large-size);
-    row-gap: calc(var(--large-size) + var(--tranform-height));
-    margin-top: calc(var(--large-size) + var(--tranform-height));
+    gap: var(--larger-size);
+    row-gap: calc(var(--larger-size) + var(--tranform-height));
+    margin-top: calc(var(--larger-size) + var(--tranform-height));
 }
 
 .members :is(.member, .member .card) {
@@ -60,19 +66,18 @@ header .title {
 
 .members .member {
     position: relative;
-    aspect-ratio: 1/1.20;
+    aspect-ratio: 1/1.2;
     background-color: rgb(255, 0, 0);
 }
 
 .members .member .card {
-    min-height: 100%;
-    height: fit-content;
+    height: 100%;
     background-color: var(--c-foreground);
     transition: .06s;
 }
 
 .members .member:hover .card {
-    transform: translateX(var(--medium-size)) translateY(var(--medium-size)) scale(1.028);
+    transform: translateX(var(--small-size)) translateY(var(--small-size)) scale(1.02);
     transition: .16s;
 }
 
@@ -91,11 +96,56 @@ header .title {
 }
 
 .members .member .card .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--xsmall-size);
+    align-items: center;
+    height: 100%;
+    padding: var(--medium-size);
     padding-top: calc(var(--profile-image-size) + var(--medium-size) - var(--tranform-height));
 }
 
 .members .member:hover .profile-image {
     animation: hover 1s infinite alternate;
+}
+
+.members .member .card .content .name {
+    font-size: var(--large-size);
+    font-weight: 600;
+}
+
+.member-links {
+    display: flex;
+    gap: var(--xsmall-size);
+}
+
+.member-links :is(.github, .website) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.member-links .github {
+    background: var(--c-github-background-gradient);
+}
+
+.member-links .website {
+    background: var(--c-personal-website-background-gradient);
+}
+
+.member-links :is(.github img, .website img) {
+    position: relative;
+    top: .1rem;
+    left: .025rem;
+    height: 2.2rem;
+}
+
+.to-profile {
+    font-size: var(--medium-size);
+    margin-top: auto;
 }
 
 @keyframes hover {
