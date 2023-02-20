@@ -39,7 +39,7 @@ header nav {
     margin: 0 auto;
 }
 
-ul {
+ul, ol {
     list-style: none;
 }
 
@@ -47,9 +47,46 @@ a {
     text-decoration: none;
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--medium-size);
+    background-color: var(--c-foreground);
+}
+
+header .banner {
+    display: flex;
+    background-image: url(/images/banner.jpg);
+    background-size: cover;
+}
+
 header .title {
+    width: var(--default-content-width);
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+    padding: var(--large-size) 0;
     font-size: var(--large-size);
     font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--medium-size) 0;
+}
+
+header .squad-links {
+    display: flex;
+    flex-direction: row;
+    gap: var(--medium-size);
+}
+
+header .squad-links li.active-squad {
+    text-decoration: underline;
+}
+
+header .squad-links li:hover {
+    text-decoration: underline;
 }
 
 .members {

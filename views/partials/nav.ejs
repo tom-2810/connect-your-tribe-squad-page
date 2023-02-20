@@ -1,9 +1,27 @@
 <header>
+    <div class="banner">
+        <div class="title">
+            <h1>FDND Squad page</h1>
+            <h2>
+                <%= squad.name %>
+            </h2>
+        </div>
+
+    </div>
     <nav>
-        <ul>
-            <li class="title">
-                <h1>FDND Squad page</h1>
+        <ol class="squad-links">
+            <li <% if (squad.name === 'Squad A') { %> class="active-squad"<% } %> >
+                <a href="/?squad=squad-a-2022">Squad A</a>
             </li>
-        </ul>
+            <li <% if (squad.name === 'Squad B') { %> class="active-squad"<% } %> >
+                <a href="/?squad=squad-b-2022">Squad B</a>
+            </li>
+            <li <% if (squad.name === 'Squat C') { %> class="active-squad"<% } %> >
+                <a href="/?squad=squat-c-2022">Squat C</a>
+            </li>
+        </ol>
+        <div class="sorting">
+            <span>Sorteren op: </span><button>naam a-z</button>
+        </div>
     </nav>
 </header>
