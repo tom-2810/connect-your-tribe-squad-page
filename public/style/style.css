@@ -72,6 +72,7 @@ header .title {
 header nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: var(--medium-size) 0;
 }
 
@@ -83,6 +84,19 @@ header .squad-links {
 
 header .squad-links :is(li.active-squad, li:hover) {
     text-decoration: underline;
+}
+
+header .sorting {
+    display: flex;
+    align-items: center;
+    gap: var(--small-size);
+}
+
+header .sorting #sorter {
+    height: var(--large-size);
+    padding: 0 var(--medium-size);
+    background-color: var(--c-foreground);
+    border-radius: var(--small-border-radius);
 }
 
 .members {
@@ -173,7 +187,7 @@ header .squad-links :is(li.active-squad, li:hover) {
 .member-links :is(.github img, .website img) {
     position: relative;
     top: .1rem;
-    left: .025rem;
+    left: .02rem;
     height: 2.2rem;
 }
 

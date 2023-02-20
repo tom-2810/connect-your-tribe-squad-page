@@ -22,7 +22,8 @@ app.get('/', (request, response) => {
 
   let slug = request.query.squad || 'squad-b-2022'
   let orderBy = request.query.orderBy || 'name'
-  let squadUrl = url + slug + '?orderBy=' + orderBy + '&direction=ASC'
+  let direction = request.query.direction || 'ASC'
+  let squadUrl = url + slug + '?orderBy=' + orderBy + '&direction=' + direction
 
 
   fetchJson(squadUrl).then((data) => {

@@ -5,9 +5,9 @@
                     <div class="card">
                         <div class="profile-image">
                             <% if (member.avatar) { %>
-                                <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" />
+                                <img src="<%= member.avatar %>" alt="De avatar van <%= member.name %>" loading="lazy" onerror="this.src='/images/placeholder-avatar.jpg'"/>
                                 <% } else { %>
-                                    <img src="/images/placeholder-avatar.jpg" alt="placeholder avatar" />
+                                    <img src="/images/placeholder-avatar.jpg" alt="placeholder avatar" loading="lazy"/>
                                     <% } %>
                         </div>
                         <div class="content">
