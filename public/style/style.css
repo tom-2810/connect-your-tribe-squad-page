@@ -81,11 +81,7 @@ header .squad-links {
     gap: var(--medium-size);
 }
 
-header .squad-links li.active-squad {
-    text-decoration: underline;
-}
-
-header .squad-links li:hover {
+header .squad-links :is(li.active-squad, li:hover) {
     text-decoration: underline;
 }
 
@@ -94,7 +90,7 @@ header .squad-links li:hover {
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
     gap: var(--larger-size);
     row-gap: calc(var(--larger-size) + var(--tranform-height));
-    margin-top: calc(var(--larger-size) + var(--tranform-height));
+    margin: calc(var(--larger-size) + var(--tranform-height)) 0;
 }
 
 .members :is(.member, .member .card) {
@@ -104,7 +100,7 @@ header .squad-links li:hover {
 .members .member {
     position: relative;
     aspect-ratio: 1/1.2;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(109, 21, 176);
 }
 
 .members .member .card {
@@ -127,6 +123,7 @@ header .squad-links li:hover {
 }
 
 .members .member .profile-image img {
+    object-fit: cover;
     width: var(--profile-image-size);
     border-radius: var(--small-border-radius);
     aspect-ratio: 1/1;
