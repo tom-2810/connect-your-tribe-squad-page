@@ -28,12 +28,38 @@ De FDND Squad page is gemaakt met Node.js, EJS en Express. De dynamische data va
 
 
 
+Node is een zogehete JavaScript-runtime-omgeving. Dit betekent dat je met Node, niet vast zit aan client-side JavaScript. Met Node kan je een back-end opzetten en hiermee server-side JavaScript inzetten. Dit is betrouwbaarder en vooral voorspelbaarder dan wanneer je voor ieder verschillende browser, apparaat, verbinding, enz.. moet afstemmen. Daarnaast is server-side JavaScript (meestal) veel sneller, omdat deze code op een externe server wordt uitgevoerd.
+
+EJS is een template framework waarmee je gebruikelijke JavaScript inline op de back-end kan laten uitvoeren. Dit maakt bijvoorbeeld een forEach loop mogelijk tussen de HTML code, zodat je templates kan vullen met data uit het framework.
+
+Express brengt deze onderdelen samen en heeft ook functies als routing. Ook maakt Express het mogelijk om RESTful API's te bouwen en gebruiken met Node JS.
+
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
 
 ## Installatie
 <!-- Bij Installatie staat stap-voor-stap beschreven hoe je de development omgeving moet inrichten om aan de repository te kunnen werken. -->
+## ⬇️ Installatie
+Fork het project en voer eerst `npm install` uit in de terminal om alle nodige packages en dependencies binnen te halen. Vervolgens maakt `npm start` een port vrij om de website te bekijken in de browser.
 
 ## Gebruik
+
+Bezoek de FDND Squad page via de volgende link: https://distinct-clam-sweatshirt.cyclic.app/ .
+De standaard geselecteerde squad is Squad B, aangezien ik ook in deze squad zit.
+
+![image](https://user-images.githubusercontent.com/112861614/230780228-e6a19101-2de4-4282-87ca-63edd45c03bc.png)
+
+Om een andere Squad te kunnen inzien, selecteer je links in de navigatie balk een andere Squad naam, zoals "Squad C".
+
+![image](https://user-images.githubusercontent.com/112861614/230780295-44d290ee-3529-453e-aea6-abc0dd3a6a9b.png)
+
+Vervolgens kun je nog sorteren op naam.
+Klik rechts in de navigatie balk op het selectie blokje naast "Sorteren op: ". Selecteer "naam A-Z" om de members op alfabetische volgorde te sorteren of op "naam Z-A" voor het omgekeerde. De pagina ververst zichzelf en toont de aangevraagde sortering. 
+
+![image](https://user-images.githubusercontent.com/112861614/230780494-1fb5acfc-b4c7-4a7c-8e31-7741efe558f0.png)
+
+Als laatste kan je het GitHub profiel of persoonlijke link openen van een member, door op de bijbehorende ronde icoontjes te klikken.
+
+![image](https://user-images.githubusercontent.com/112861614/230780584-a22e73d3-c19e-435e-91e5-a7fe0fb478b9.png)
 
 ## Bronnen
 
